@@ -246,10 +246,17 @@ A commit with more than 300 lines of code (more than one feature/bug fix) is not
 <h4>Husky (Optional, Recommended)<a class="headerlink" href="#husky-optional-recommended" title="Permalink to this heading">#</a></h4>
 <p><a class="reference external" href="https://typicode.github.io/husky/#/">Husky</a> is a git hook tool, it can prevent you from committing code that cannot compile/has wrong commit messages/not following team code format standard/cannot pass the tests/ and many other problems.</p>
 <p>Follow <a class="reference external" href="https://typicode.github.io/husky/#/?id=automatic-recommended">the official guide to install</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>husky-init<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>install<span class="w">       </span><span class="c1"># npm</span>
+<span class="c1"># OR</span>
+pnpm<span class="w"> </span>dlx<span class="w"> </span>husky-init<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pnpm<span class="w"> </span>install<span class="w"> </span><span class="c1"># pnpm</span>
+</pre></div>
+</div>
 <p>After installation, you can add some files to <code class="docutils literal notranslate"><span class="pre">.husky</span></code>.</p>
 <p>The following file will check whether the commit messages follow the conventional commits style.</p>
-<p>You have to install the <code class="docutils literal notranslate"><span class="pre">commitlint</span></code> globally first:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@commitlint/cli<span class="w"> </span>@commitlint/config-conventional
+<p>You have to install the <code class="docutils literal notranslate"><span class="pre">commitlint</span></code> first:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>i<span class="w"> </span>-g<span class="w"> </span>@commitlint/cli
+pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>@commitlint/config-conventional
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;module.exports = {extends: [&#39;@commitlint/config-conventional&#39;]}&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>commitlint.config.js
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -289,13 +296,18 @@ A commit with more than 300 lines of code (more than one feature/bug fix) is not
 <h2>Git branch<a class="headerlink" href="#git-branch" title="Permalink to this heading">#</a></h2>
 <p>See <a class="reference external" href="https://learngitbranching.js.org/">Learn Git Branching</a>.</p>
 </section>
-<section id="elm">
-<h2>Elm<a class="headerlink" href="#elm" title="Permalink to this heading">#</a></h2>
-<p>See <a class="reference external" href="https://guide.elm-lang.org/install/elm.html">the official Elm website</a>.</p>
+<section id="git-lfs">
+<h2>Git LFS<a class="headerlink" href="#git-lfs" title="Permalink to this heading">#</a></h2>
+<p>Git LFS is a tool to upload large binary files to git repository.</p>
+<p>Go to the <a class="reference external" href="https://git-lfs.com/">official website</a> to install Git LFS.</p>
+<p>Note that you have to run once the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>lfs<span class="w"> </span>install
+</pre></div>
+</div>
 </section>
 <section id="nodejs">
 <h2>Nodejs<a class="headerlink" href="#nodejs" title="Permalink to this heading">#</a></h2>
-<p>Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more.</p>
+<p>Official website: <a class="reference external" href="https://nodejs.org/en/">nodejs.org</a>.</p>
 <p>Node.js is a back-end JavaScript runtime environment, runs on the V8 JavaScript Engine, and executes JavaScript code outside a web browser.</p>
 <p>You can use a node version manager to install and manage different versions of nodejs.</p>
 <p>You can use <a class="reference external" href="https://github.com/nvm-sh/nvm">nvm</a>, <a class="reference external" href="https://github.com/Schniz/fnm">fnm</a> (which I am using).</p>
@@ -304,6 +316,14 @@ A commit with more than 300 lines of code (more than one feature/bug fix) is not
 <h2>Pnpm<a class="headerlink" href="#pnpm" title="Permalink to this heading">#</a></h2>
 <p>Pnpm is a fast, disk space efficient package manager for nodejs.</p>
 <p>See <a class="reference external" href="https://pnpm.io/zh/installation">the official Pnpm website</a>.</p>
+</section>
+<section id="elm">
+<h2>Elm<a class="headerlink" href="#elm" title="Permalink to this heading">#</a></h2>
+<p>See <a class="reference external" href="https://guide.elm-lang.org/install/elm.html">the official Elm website</a>.</p>
+<p>You can install elm by using <code class="docutils literal notranslate"><span class="pre">pnpm</span></code>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>i<span class="w"> </span>-g<span class="w"> </span>elm<span class="w"> </span>elm-format
+</pre></div>
+</div>
 </section>
 <section id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
@@ -381,9 +401,10 @@ A commit with more than 300 lines of code (more than one feature/bug fix) is not
 </ul>
 </li>
 <li><a class="reference internal" href="#git-branch">Git branch</a></li>
-<li><a class="reference internal" href="#elm">Elm</a></li>
+<li><a class="reference internal" href="#git-lfs">Git LFS</a></li>
 <li><a class="reference internal" href="#nodejs">Nodejs</a></li>
 <li><a class="reference internal" href="#pnpm">Pnpm</a></li>
+<li><a class="reference internal" href="#elm">Elm</a></li>
 <li><a class="reference internal" href="#python">Python</a></li>
 <li><a class="reference internal" href="#elm-playground">Elm Playground</a></li>
 </ul>

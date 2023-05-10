@@ -66,15 +66,23 @@ Husky (Optional, Recommended)
 
 Follow `the official guide to install <https://typicode.github.io/husky/#/?id=automatic-recommended>`_.
 
+.. code-block:: bash
+
+    npx husky-init && npm install       # npm
+    # OR
+    pnpm dlx husky-init && pnpm install # pnpm
+
 After installation, you can add some files to ``.husky``.
 
 The following file will check whether the commit messages follow the conventional commits style.
 
-You have to install the ``commitlint`` globally first:
+You have to install the ``commitlint`` first:
 
 .. code-block:: sh
 
-    pnpm install -g @commitlint/cli @commitlint/config-conventional
+    pnpm i -g @commitlint/cli
+    pnpm i -D  @commitlint/config-conventional
+    echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
 
 .. code-block:: sh
     :linenos:
@@ -113,15 +121,23 @@ Git branch
 
 See `Learn Git Branching <https://learngitbranching.js.org/>`_.
 
-Elm
------
+Git LFS
+--------
 
-See `the official Elm website <https://guide.elm-lang.org/install/elm.html>`_.
+Git LFS is a tool to upload large binary files to git repository.
+
+Go to the `official website <https://git-lfs.com/>`_ to install Git LFS.
+
+Note that you have to run once the following command:
+
+.. code-block:: bash
+
+    git lfs install
 
 Nodejs
 -------
 
-Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more.
+Official website: `nodejs.org <https://nodejs.org/en/>`_.
 
 Node.js is a back-end JavaScript runtime environment, runs on the V8 JavaScript Engine, and executes JavaScript code outside a web browser.
 
@@ -135,6 +151,17 @@ Pnpm
 Pnpm is a fast, disk space efficient package manager for nodejs.
 
 See `the official Pnpm website <https://pnpm.io/zh/installation>`_.
+
+Elm
+-----
+
+See `the official Elm website <https://guide.elm-lang.org/install/elm.html>`_.
+
+You can install elm by using ``pnpm``.
+
+.. code-block:: sh
+
+    pnpm i -g elm elm-format
 
 Python
 --------
