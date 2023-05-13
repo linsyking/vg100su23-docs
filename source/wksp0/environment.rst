@@ -13,6 +13,8 @@ Environment Setup
 Git
 -----
 
+`Windows Git Installer <https://registry.npmmirror.com/-/binary/git-for-windows/v2.40.1.windows.1/Git-2.40.1-64-bit.exe>`_.
+
 If you are the first time using Git, please also set your account email and name.
 
 
@@ -74,26 +76,7 @@ Follow `the official guide to install <https://typicode.github.io/husky/#/?id=au
 
 After installation, you can add some files to ``.husky``.
 
-The following file will check whether the commit messages follow the conventional commits style.
-
-You have to install the ``commitlint`` first:
-
-.. code-block:: sh
-
-    pnpm i -g @commitlint/cli
-    pnpm i -D  @commitlint/config-conventional
-    echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
-
-.. code-block:: sh
-    :linenos:
-    :caption: .husky/commit-msg
-
-    #!/usr/bin/env sh
-    . "$(dirname -- "$0")/_/husky.sh"
-
-    commitlint --edit $1
-
-Or, alternatively, you can install commitlint locally and use ``pnpx`` to run the commands.
+The following file will check whether the code can make and whether the code is formatted.
 
 .. code-block:: sh
     :linenos:
