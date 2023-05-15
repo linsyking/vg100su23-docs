@@ -70,15 +70,37 @@ Follow `the official guide to install <https://typicode.github.io/husky/#/?id=au
 
 .. code-block:: bash
 
-    npx husky-init && npm install       # npm
-    # OR
     pnpm dlx husky-init && pnpm install # pnpm
+
+If you are using a project which has ``husky`` enables, you need to run the following command to register the git hooks:
+
+.. code-block:: bash
+
+    pnpm run prepare
 
 After installation, you can add some files to ``.husky``.
 
-The following file will check whether the code can make and whether the code is formatted.
+The following example will check whether the commit messages follow the conventional commits style.
 
-.. code-block:: sh
+You have to install the ``commitlint`` first:
+
+.. code-block:: bash
+
+    pnpm i -g @commitlint/cli
+    pnpm i -D  @commitlint/config-conventional
+    echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+
+.. code-block:: bash
+    :linenos:
+    :caption: .husky/commit-msg
+
+    #!/usr/bin/env sh
+    . "$(dirname -- "$0")/_/husky.sh"
+    commitlint --edit $1
+
+The following example will check whether the code can make and whether the code is formatted.
+
+.. code-block:: bash
     :linenos:
     :caption: .husky/pre-commit
 

@@ -209,6 +209,7 @@
 </div>
 <section id="git">
 <h2>Git<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://registry.npmmirror.com/-/binary/git-for-windows/v2.40.1.windows.1/Git-2.40.1-64-bit.exe">Windows Git Installer</a>.</p>
 <p>If you are the first time using Git, please also set your account email and name.</p>
 <section id="git-commit">
 <h3>Git commit<a class="headerlink" href="#git-commit" title="Permalink to this heading">#</a></h3>
@@ -246,32 +247,33 @@ A commit with more than 300 lines of code (more than one feature/bug fix) is not
 <h4>Husky (Optional, Recommended)<a class="headerlink" href="#husky-optional-recommended" title="Permalink to this heading">#</a></h4>
 <p><a class="reference external" href="https://typicode.github.io/husky/#/">Husky</a> is a git hook tool, it can prevent you from committing code that cannot compile/has wrong commit messages/not following team code format standard/cannot pass the tests/ and many other problems.</p>
 <p>Follow <a class="reference external" href="https://typicode.github.io/husky/#/?id=automatic-recommended">the official guide to install</a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>husky-init<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>install<span class="w">       </span><span class="c1"># npm</span>
-<span class="c1"># OR</span>
-pnpm<span class="w"> </span>dlx<span class="w"> </span>husky-init<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pnpm<span class="w"> </span>install<span class="w"> </span><span class="c1"># pnpm</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>dlx<span class="w"> </span>husky-init<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pnpm<span class="w"> </span>install<span class="w"> </span><span class="c1"># pnpm</span>
+</pre></div>
+</div>
+<p>If you are using a project which has <code class="docutils literal notranslate"><span class="pre">husky</span></code> enables, you need to run the following command to register the git hooks:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>run<span class="w"> </span>prepare
 </pre></div>
 </div>
 <p>After installation, you can add some files to <code class="docutils literal notranslate"><span class="pre">.husky</span></code>.</p>
-<p>The following file will check whether the commit messages follow the conventional commits style.</p>
+<p>The following example will check whether the commit messages follow the conventional commits style.</p>
 <p>You have to install the <code class="docutils literal notranslate"><span class="pre">commitlint</span></code> first:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>i<span class="w"> </span>-g<span class="w"> </span>@commitlint/cli
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>i<span class="w"> </span>-g<span class="w"> </span>@commitlint/cli
 pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>@commitlint/config-conventional
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;module.exports = {extends: [&#39;@commitlint/config-conventional&#39;]}&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>commitlint.config.js
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">.husky/commit-msg</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/usr/bin/env sh</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/usr/bin/env sh</span>
 <span class="linenos">2</span>.<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span>--<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">/_/husky.sh&quot;</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span>commitlint<span class="w"> </span>--edit<span class="w"> </span><span class="nv">$1</span>
+<span class="linenos">3</span>commitlint<span class="w"> </span>--edit<span class="w"> </span><span class="nv">$1</span>
 </pre></div>
 </div>
 </div>
-<p>Or, alternatively, you can install commitlint locally and use <code class="docutils literal notranslate"><span class="pre">pnpx</span></code> to run the commands.</p>
+<p>The following example will check whether the code can make and whether the code is formatted.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">.husky/pre-commit</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env sh</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env sh</span>
 <span class="linenos"> 2</span>.<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span>--<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">/_/husky.sh&quot;</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\033[32mBuilding the project...\033[0m&quot;</span>
