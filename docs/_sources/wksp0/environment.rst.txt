@@ -1,7 +1,7 @@
 Environment Setup
 =================
 
-.. admonition:: Goal
+.. admonition:: Goals
 
     - Install ``Git``
     - Install ``Python`` (>=3.7, needs ``pip``)
