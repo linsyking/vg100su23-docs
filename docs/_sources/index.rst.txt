@@ -8,5 +8,6 @@ Welcome to VG100SU23's documentation!
    Introduction <unfiled/introduction>
    Workshop 0 <wksp0/environment>
    Workshop 1 <wksp1/fp>
+   Workshop 2 <wksp2/main>
 
 
