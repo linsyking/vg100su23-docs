@@ -22,17 +22,13 @@ Learn how to create a project.
 
 Create a ``dev`` branch for your repository.
 
-Elm exercises
--------------
+Elm projects and Elm modules
+----------------------------
 
-Each group chooses one problem and discuss the solution (5 min):
+- How to initialize a project?
+- How to create a module?
+- How to import a module?
 
-- Last Two Elements of a List
-- N'th Element of a List
-- Length of a List
-- Reverse a List
-- Insert an Element at a Given Position Into a List
-- Remove the K'th Element From a List
 
 ``foldr`` and ``foldl``
 -----------------------
