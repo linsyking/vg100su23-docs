@@ -1,17 +1,17 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Basic Elm Project" href="../wksp2/main.html" /><link rel="prev" title="Environment Setup" href="../wksp0/environment.html" />
 
-    <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
+    <!-- Generated with Sphinx 7.2.3 and Furo 2023.08.19 -->
         <title>Functional Programming and Git Usage - VG100SU23 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -162,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../wksp0/environment.html">Workshop 0</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Workshop 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wksp2/main.html">Workshop 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wksp8/main.html">Workshop 8</a></li>
 </ul>
 
 </div>
@@ -197,7 +198,7 @@
         </div>
         <article role="main">
           <section id="functional-programming-and-git-usage">
-<h1>Functional Programming and Git Usage<a class="headerlink" href="#functional-programming-and-git-usage" title="Permalink to this heading">#</a></h1>
+<h1>Functional Programming and Git Usage<a class="headerlink" href="#functional-programming-and-git-usage" title="Link to this heading">#</a></h1>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Goals</p>
 <ul class="simple">
@@ -208,12 +209,12 @@
 </ul>
 </div>
 <section id="functional-programming">
-<h2>Functional Programming<a class="headerlink" href="#functional-programming" title="Permalink to this heading">#</a></h2>
+<h2>Functional Programming<a class="headerlink" href="#functional-programming" title="Link to this heading">#</a></h2>
 <p>Basic idea: <strong>Functions as first class citizens</strong>.</p>
 <p>This means that in functional programming language, functions are <strong>values</strong> like other data types, eg. integers and strings.</p>
 <p>In this course we will use a simple expression language called <a class="reference external" href="https://elm-lang.org/">Elm</a> to learn functional programming.</p>
 <section id="expressions">
-<h3>Expressions<a class="headerlink" href="#expressions" title="Permalink to this heading">#</a></h3>
+<h3>Expressions<a class="headerlink" href="#expressions" title="Link to this heading">#</a></h3>
 <p>Informally, expressions are the things that can somehow be evaluated. For example, in C, the following are expressions:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
 <span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span>
@@ -227,7 +228,7 @@
 <p>Try to find some data types in Elm by using <code class="docutils literal notranslate"><span class="pre">elm</span> <span class="pre">repl</span></code>.</p>
 </section>
 <section id="types">
-<h3>Types<a class="headerlink" href="#types" title="Permalink to this heading">#</a></h3>
+<h3>Types<a class="headerlink" href="#types" title="Link to this heading">#</a></h3>
 <p>What are types? Type is actually another word for “Set” (mathematically). Set is a collection of things. For example, the set of all integers is a type. The set of all strings is a type.</p>
 <p>In Elm, the basic data types (defined internally) are:</p>
 <ul class="simple">
@@ -254,12 +255,12 @@
 <p>What’s the difference between <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">Int</span> <span class="pre">-&gt;</span> <span class="pre">(Float</span> <span class="pre">-&gt;</span> <span class="pre">String)</span></code> and <code class="docutils literal notranslate"><span class="pre">(Int</span> <span class="pre">-&gt;</span> <span class="pre">Float)</span> <span class="pre">-&gt;</span> <span class="pre">String</span></code>?</p>
 </section>
 <section id="sum-type-and-product-type">
-<h3>Sum Type and Product Type<a class="headerlink" href="#sum-type-and-product-type" title="Permalink to this heading">#</a></h3>
+<h3>Sum Type and Product Type<a class="headerlink" href="#sum-type-and-product-type" title="Link to this heading">#</a></h3>
 <p>Sum type is a type that has multiple elements. For example, the type <code class="docutils literal notranslate"><span class="pre">Bool</span></code> has two constructors: <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. Hence we say that <code class="docutils literal notranslate"><span class="pre">Bool</span></code> is a sum type (often denoted as <span class="math notranslate nohighlight">\(1+1=2\)</span>).</p>
 <p>Product type is a type that is the Cartesian product of some types (maybe different). For example, the type <code class="docutils literal notranslate"><span class="pre">(Int,</span> <span class="pre">Float)</span></code> is a product type. The tuple type is often denoted as <span class="math notranslate nohighlight">\(\tau_1 \times \tau_2\)</span>. In Elm you can also have a tuple of three elements, which is denoted as <span class="math notranslate nohighlight">\(\tau_1 \times \tau_2 \times \tau_3\)</span>. There are no other tuples.</p>
 </section>
 <section id="inductive-types">
-<h3>Inductive Types<a class="headerlink" href="#inductive-types" title="Permalink to this heading">#</a></h3>
+<h3>Inductive Types<a class="headerlink" href="#inductive-types" title="Link to this heading">#</a></h3>
 <p>Elm allows you to define inductive types.</p>
 <p>Inductive types are types that are defined inductively. For example, the natural number type <code class="docutils literal notranslate"><span class="pre">Nat</span></code> can be written as:</p>
 <ul class="simple">
@@ -279,7 +280,7 @@
 </div>
 </section>
 <section id="parametric-polymorphism">
-<h3>Parametric Polymorphism<a class="headerlink" href="#parametric-polymorphism" title="Permalink to this heading">#</a></h3>
+<h3>Parametric Polymorphism<a class="headerlink" href="#parametric-polymorphism" title="Link to this heading">#</a></h3>
 <p>Elm supports parametric polymorphism. This means that we can write functions that work on any type.
 You can think it as the template functions in C++.
 For example, the identity function <code class="docutils literal notranslate"><span class="pre">identity</span></code> has type <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">a</span></code>.</p>
@@ -300,7 +301,7 @@ For example, the identity function <code class="docutils literal notranslate"><s
 <p>Read <a class="reference external" href="https://www.avestura.dev/blog/what-is-the-type-of-type">What is type of type</a> if you are interested in this topic.</p>
 </section>
 <section id="record-data">
-<h3>Record data<a class="headerlink" href="#record-data" title="Permalink to this heading">#</a></h3>
+<h3>Record data<a class="headerlink" href="#record-data" title="Link to this heading">#</a></h3>
 <p>Record data is a data type that has named fields. For example, we can define a record type <code class="docutils literal notranslate"><span class="pre">Person</span></code> as follows:</p>
 <div class="highlight-elm notranslate"><div class="highlight"><pre><span></span><span class="kr">type</span><span class="w"> </span><span class="kr">alias</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">name</span><span class="nf">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="nv">age</span><span class="nf">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
@@ -312,7 +313,7 @@ For example, the identity function <code class="docutils literal notranslate"><s
 <p>It’s pretty much similar to the <code class="docutils literal notranslate"><span class="pre">struct</span></code> in C.</p>
 </section>
 <section id="pattern-matching">
-<h3>Pattern Matching<a class="headerlink" href="#pattern-matching" title="Permalink to this heading">#</a></h3>
+<h3>Pattern Matching<a class="headerlink" href="#pattern-matching" title="Link to this heading">#</a></h3>
 <p>Pattern matching is one of the expression. It is used to match the value of a sum type (case analysis).</p>
 <p>For example, we have a data <code class="docutils literal notranslate"><span class="pre">d</span></code> of type <code class="docutils literal notranslate"><span class="pre">Maybe</span> <span class="pre">Int</span></code>. We can use pattern matching to check whether <code class="docutils literal notranslate"><span class="pre">d</span></code> is <code class="docutils literal notranslate"><span class="pre">Just</span></code> or <code class="docutils literal notranslate"><span class="pre">Nothing</span></code>, and get the value of <code class="docutils literal notranslate"><span class="pre">Just</span></code>.</p>
 <div class="highlight-elm notranslate"><div class="highlight"><pre><span></span><span class="kr">case</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="kr">of</span>
@@ -402,13 +403,13 @@ For example, the identity function <code class="docutils literal notranslate"><s
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

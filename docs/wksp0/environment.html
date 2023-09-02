@@ -1,17 +1,17 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Functional Programming and Git Usage" href="../wksp1/fp.html" /><link rel="prev" title="Introduction" href="../unfiled/introduction.html" />
 
-    <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
+    <!-- Generated with Sphinx 7.2.3 and Furo 2023.08.19 -->
         <title>Environment Setup - VG100SU23 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -162,6 +162,7 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Workshop 0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wksp1/fp.html">Workshop 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wksp2/main.html">Workshop 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wksp8/main.html">Workshop 8</a></li>
 </ul>
 
 </div>
@@ -197,7 +198,7 @@
         </div>
         <article role="main">
           <section id="environment-setup">
-<h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this heading">#</a></h1>
+<h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Link to this heading">#</a></h1>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Goals</p>
 <ul class="simple">
@@ -210,11 +211,11 @@
 </ul>
 </div>
 <section id="git">
-<h2>Git<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h2>
+<h2>Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://registry.npmmirror.com/-/binary/git-for-windows/v2.40.1.windows.1/Git-2.40.1-64-bit.exe">Windows Git Installer</a>.</p>
 <p>If you are the first time using Git, please also set your account email and name.</p>
 <section id="git-commit">
-<h3>Git commit<a class="headerlink" href="#git-commit" title="Permalink to this heading">#</a></h3>
+<h3>Git commit<a class="headerlink" href="#git-commit" title="Link to this heading">#</a></h3>
 <p>There are several rules you have to follow for commits.</p>
 <ul>
 <li><p>Atomic commits</p>
@@ -226,12 +227,12 @@ A commit with more than 300 lines of code (more than one feature/bug fix) is not
 <li><p>Commit message should be concise, meaningful and clear</p></li>
 </ul>
 <section id="styles">
-<h4>Styles<a class="headerlink" href="#styles" title="Permalink to this heading">#</a></h4>
+<h4>Styles<a class="headerlink" href="#styles" title="Link to this heading">#</a></h4>
 <p>We recommend you to follow the <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> style.</p>
 <p>Although there are some CLI tools (like <a class="reference external" href="https://commitizen-tools.github.io/commitizen/">Commitizen</a>) helping you to commit, I think writing commit messages by hand is the fastest and most efficient.</p>
 </section>
 <section id="automatic-changelog-optional">
-<h4>Automatic Changelog (Optional)<a class="headerlink" href="#automatic-changelog-optional" title="Permalink to this heading">#</a></h4>
+<h4>Automatic Changelog (Optional)<a class="headerlink" href="#automatic-changelog-optional" title="Link to this heading">#</a></h4>
 <p>You have to write a <code class="docutils literal notranslate"><span class="pre">Changelog.md</span></code> for your project. It can be generated automatically if you use the conventional commit style.</p>
 <p>First, in your project (which has <code class="docutils literal notranslate"><span class="pre">package.json</span></code>), install the dev dependency:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>standard-version
@@ -246,7 +247,7 @@ A commit with more than 300 lines of code (more than one feature/bug fix) is not
 <p>This will bump the version automatically and add a git tag. You have to manually check if the version is desired.</p>
 </section>
 <section id="husky-optional-recommended">
-<h4>Husky (Optional, Recommended)<a class="headerlink" href="#husky-optional-recommended" title="Permalink to this heading">#</a></h4>
+<h4>Husky (Optional, Recommended)<a class="headerlink" href="#husky-optional-recommended" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://typicode.github.io/husky/#/">Husky</a> is a git hook tool, it can prevent you from committing code that cannot compile/has wrong commit messages/not following team code format standard/cannot pass the tests/ and many other problems.</p>
 <p>Follow <a class="reference external" href="https://typicode.github.io/husky/#/?id=automatic-recommended">the official guide to install</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>dlx<span class="w"> </span>husky-init<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pnpm<span class="w"> </span>install<span class="w"> </span><span class="c1"># pnpm</span>
@@ -265,7 +266,7 @@ pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">.husky/commit-msg</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">.husky/commit-msg</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/usr/bin/env sh</span>
 <span class="linenos">2</span>.<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span>--<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">/_/husky.sh&quot;</span>
 <span class="linenos">3</span>commitlint<span class="w"> </span>--edit<span class="w"> </span><span class="nv">$1</span>
@@ -274,7 +275,7 @@ pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>
 </div>
 <p>The following example will check whether the code can make and whether the code is formatted.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">.husky/pre-commit</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">.husky/pre-commit</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env sh</span>
 <span class="linenos"> 2</span>.<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span>--<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">/_/husky.sh&quot;</span>
 <span class="linenos"> 3</span>
@@ -297,11 +298,11 @@ pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>
 </section>
 </section>
 <section id="git-branch">
-<h2>Git branch<a class="headerlink" href="#git-branch" title="Permalink to this heading">#</a></h2>
+<h2>Git branch<a class="headerlink" href="#git-branch" title="Link to this heading">#</a></h2>
 <p>See <a class="reference external" href="https://learngitbranching.js.org/">Learn Git Branching</a>.</p>
 </section>
 <section id="git-lfs">
-<h2>Git LFS<a class="headerlink" href="#git-lfs" title="Permalink to this heading">#</a></h2>
+<h2>Git LFS<a class="headerlink" href="#git-lfs" title="Link to this heading">#</a></h2>
 <p>Git LFS is a tool to upload large binary files to git repository.</p>
 <p>Go to the <a class="reference external" href="https://git-lfs.com/">official website</a> to install Git LFS.</p>
 <p>Note that you have to run once the following command:</p>
@@ -310,19 +311,19 @@ pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>
 </div>
 </section>
 <section id="nodejs">
-<h2>Nodejs<a class="headerlink" href="#nodejs" title="Permalink to this heading">#</a></h2>
+<h2>Nodejs<a class="headerlink" href="#nodejs" title="Link to this heading">#</a></h2>
 <p>Official website: <a class="reference external" href="https://nodejs.org/en/">nodejs.org</a>.</p>
 <p>Node.js is a back-end JavaScript runtime environment, runs on the V8 JavaScript Engine, and executes JavaScript code outside a web browser.</p>
 <p>You can use a node version manager to install and manage different versions of nodejs.</p>
 <p>You can use <a class="reference external" href="https://github.com/nvm-sh/nvm">nvm</a>, <a class="reference external" href="https://github.com/Schniz/fnm">fnm</a> (which I am using).</p>
 </section>
 <section id="pnpm">
-<h2>Pnpm<a class="headerlink" href="#pnpm" title="Permalink to this heading">#</a></h2>
+<h2>Pnpm<a class="headerlink" href="#pnpm" title="Link to this heading">#</a></h2>
 <p>Pnpm is a fast, disk space efficient package manager for nodejs.</p>
 <p>See <a class="reference external" href="https://pnpm.io/zh/installation">the official Pnpm website</a>.</p>
 </section>
 <section id="elm">
-<h2>Elm<a class="headerlink" href="#elm" title="Permalink to this heading">#</a></h2>
+<h2>Elm<a class="headerlink" href="#elm" title="Link to this heading">#</a></h2>
 <p>See <a class="reference external" href="https://guide.elm-lang.org/install/elm.html">the official Elm website</a>.</p>
 <p>You can install elm by using <code class="docutils literal notranslate"><span class="pre">pnpm</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pnpm<span class="w"> </span>i<span class="w"> </span>-g<span class="w"> </span>elm<span class="w"> </span>elm-format
@@ -330,7 +331,7 @@ pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>
 </div>
 </section>
 <section id="python">
-<h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
 <p>Install any python version &gt;= 3.7, and make sure <code class="docutils literal notranslate"><span class="pre">pip</span></code> is installed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -342,7 +343,7 @@ pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>
 </div>
 </section>
 <section id="elm-playground">
-<h2>Elm Playground<a class="headerlink" href="#elm-playground" title="Permalink to this heading">#</a></h2>
+<h2>Elm Playground<a class="headerlink" href="#elm-playground" title="Link to this heading">#</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">elm</span> <span class="pre">repl</span></code> to play with Elm.</p>
 </section>
 </section>
@@ -430,12 +431,12 @@ pnpm<span class="w"> </span>i<span class="w"> </span>-D<span class="w">  </span>
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     </body>
 </html>
